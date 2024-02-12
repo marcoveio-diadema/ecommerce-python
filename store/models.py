@@ -6,6 +6,9 @@ class Category(models.Model):
     name = models.CharField(max_length=50)
     def __str__(self):
         return self.name
+    
+    class Meta:
+        verbose_name_plural = "Categories"
 
 #customer
 class Customer(models.Model):
@@ -25,6 +28,9 @@ class Product(models.Model):
     category = models.ForeignKey(Category, on_delete=models.CASCADE, default=1)
     description = models.CharField(max_length=300, default='', blank=True, null=True)
     image = models.ImageField(upload_to='uploads/product/')
+    # sales
+    is_sale = models.BooleanField(default=False)
+    sale_price = models.DecimalField(decimal_places=2, max_digits=7, null=True)
 
     models.CharField(max_length=100)
 

@@ -1,0 +1,7 @@
+.index-header {    
+    height: 500px !important;
+    overflow: hidden;
+    background-position: center; /* Center the image */
+    background-repeat: no-repeat; /* Do not repeat the image */
+    background-size: cover;
+}
