@@ -1,0 +1,27 @@
+{% extends "store/base.html" %}
+{% load static %}
+{% block title %}Sign Up{% endblock %}
+{% block content %}
+<header class="index-header py-5" style="background-image: url({% static 'img/bg-copy.jpg' %})">
+    <div class="container px-4 px-lg-5 my-5">
+        <div class="text-center text-white">
+            <h1 class="display-4 fw-bolder">Sign Up</h1>
+            <p class="lead fw-normal text-white-50 mb-0">Create your account</p>
+        </div>
+    </div>
+</header>
+<section class="py-3">
+    <div class="container py-3 d-flex justify-content-center">
+        <div class="row">
+            <div class="col">
+                <form method='POST' class="py-3" action="{% url 'register' %}">
+                    {% csrf_token %}
+                    {{ form.as_p }}
+                    <br>
+                    <button type="submit" class="btn btn-secondary">Register</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock %}
