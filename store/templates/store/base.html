@@ -29,12 +29,15 @@
                     {% endif %}
                                    
                     <li class="nav-item dropdown">
-                        <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Shop</a>
+                        <a class="nav-link dropdown-toggle" id="navbarDropdown" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">Categories</a>
                         <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                            <li><a class="dropdown-item" href="#!">All Products</a></li>
+                            <li><a class="dropdown-item" href="{% url 'home' %}">All Products</a></li>
                             <li><hr class="dropdown-divider"></li>
-                            <li><a class="dropdown-item" href="#!">Popular Items</a></li>
-                            <li><a class="dropdown-item" href="#!">New Arrivals</a></li>
+                            <li><a class="dropdown-item" href="{% url 'category' 'Vases'%}">Vases</a></li>
+                            <li><a class="dropdown-item" href="{% url 'category' 'Shelves'%}">Shelves</a></li>
+                            <li><a class="dropdown-item" href="{% url 'category' 'Seats'%}">Seats</a></li>
+                            <li><a class="dropdown-item" href="{% url 'category' 'Interieur-decoration'%}">Interieur Decoration</a></li>
+                            <li><a class="dropdown-item" href="{% url 'category' 'Exterieur-decoration'%}">Exterieur Decoration</a></li>
                         </ul>
                     </li>
                 </ul>

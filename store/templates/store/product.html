@@ -1,0 +1,38 @@
+{% extends "store/base.html" %}
+{% load static %}
+{% block title %}Item{% endblock %}
+{% block content %}
+
+<section class="product-section py-4">
+    <div class="container py-3">
+        <div class="card mb-3 shadow">
+            <div class="row g-0">
+              <div class="col-md-3">
+                <img src="{{ product.image.url }}" class="img-fluid rounded-start" alt="">
+              </div>
+              <div class="col-md-6">
+                <div class="card-body">
+                  <h5 class="card-title text-center">{{ product.name }}</h5>
+                  <p class="card-text text-center">{{ product.description }}</p>
+                  <div class="container text-center py-3">
+                    {% if not product.is_sale %}
+                    <!-- Product price-->
+                    ${{ product.price }}
+                  {% else %}
+                    <strike>${{ product.price }}</strike>
+                    &nbsp;
+                    <em><strong>${{ product.sale_price }}</strong></em> 
+                  {% endif %}
+                  </div>
+                  
+                  <div class="container text-center">
+                    <a href="{% url 'home' %}" class="btn btn-secondary">Go Back</a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+    </div>
+</section>
+
+{% endblock %}
