@@ -34,6 +34,26 @@
                     &nbsp;
                     <em><strong>${{ product.sale_price }}</strong></em> 
                   {% endif %}
+                  <!-- quantity box -->
+                  <div class="row justify-content-center mt-2">
+                    <div class="col-md-3">Quantity:</div>
+                    <div class="col-md-3">
+                      <select class="form-select" id="quantityProducts">
+                          
+                        {% for key, value in quantities.items %}
+                          {% if key == product.id|slugify %}
+                            <option value="{{ value }}" selected>{{ value }}</option>
+                          {% endif %}
+                        {% endfor %}
+                        
+                        <option value="1">1</option>
+                        <option value="2">2</option>
+                        <option value="3">3</option>
+                        <option value="4">4</option>
+                        <option value="5">5</option>
+                      </select>
+                    </div>
+                  </div>                    
                   </div>
                   <div class="container text-center">
                     <a href="{% url 'home' %}" class="btn btn-secondary">Go Back</a>

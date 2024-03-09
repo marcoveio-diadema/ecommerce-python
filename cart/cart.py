@@ -13,14 +13,15 @@ class Cart():
         # cart is available on all pages
         self.cart = cart
 
-    def add(self, product):
+    def add(self, product, cart_quantity):
         product_id = str(product.id)
+        product_quantity = cart_quantity
 
         # logic
         if product_id in self.cart:
             pass
         else:
-            self.cart[product_id] = {'price': str(product.price )}
+            self.cart[product_id] = int(product_quantity)
         
         self.session.modified = True
     
@@ -34,4 +35,8 @@ class Cart():
         products = Product.objects.filter(id__in=product_ids)
 
         return products
+    
+    def get_quantities(self):
+        quantities = self.cart
+        return quantities
 
